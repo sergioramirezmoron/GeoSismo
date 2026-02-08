@@ -30,22 +30,23 @@ function App() {
   }
 
   return (
-    <div className="flex flex-col h-dvh w-full bg-slate-900 text-white overflow-hidden">
+    <div className="flex flex-col min-h-dvh w-full bg-slate-900 text-white md:h-dvh md:overflow-hidden">
       <Header />
-      <main className="flex-1 flex flex-col p-4 relative overflow-y-auto md:overflow-hidden">
-        <div className="container mx-auto md:h-full flex flex-col gap-4">
+      <main className="flex-1 flex flex-col p-4 relative">
+        <div className="container mx-auto flex flex-col gap-4 flex-1">
           <div className="shrink-0">
             <Dashboard
               stats={stats}
               onLocationSelect={(coords) => setMapCenter(coords)}
             />
           </div>
-          <div className="min-h-125 h-[50vh] md:h-auto md:min-h-0 md:flex-1 bg-slate-800 rounded-2xl overflow-hidden border border-slate-700 shadow-2xl relative z-0">
-            <Map data={earthquakes} selectedPosition={mapCenter} />
+          <div className="flex-1 min-h-125 w-full bg-slate-800 rounded-2xl overflow-hidden border border-slate-700 shadow-2xl relative z-0 md:shadow-none">
+            <div className="absolute inset-0">
+              <Map data={earthquakes} selectedPosition={mapCenter} />
+            </div>
           </div>
         </div>
       </main>
-
       <Footer />
     </div>
   );
