@@ -40,7 +40,7 @@ function App() {
             onLocationSelect={(coords) => setMapCenter(coords)}
           />
 
-          <div className="flex-1 bg-slate-800 rounded-2xl overflow-hidden border border-slate-700 shadow-2xl relative z-0">
+          <div className="h-[60vh] min-h-125 md:h-auto md:min-h-0 md:flex-1 bg-slate-800 rounded-2xl overflow-hidden border border-slate-700 shadow-2xl relative z-0">
             <Map data={earthquakes} selectedPosition={mapCenter} />
           </div>
         </div>
